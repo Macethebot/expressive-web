@@ -1,0 +1,144 @@
+header{
+
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #fdf9c9;
+    color: #000;
+    font-family: 'Garamond', serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/* Text styling */
+h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #e0e0e0;
+}
+/*  */
+.slidePage {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+.boxedContent {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    position: relative;
+}
+.title-box {
+    background-color: #c5d5c5;
+    padding: 40px;
+    margin: 20px;
+    border: 2px dotted #000;
+}
+#slideA {
+    /* background-color: #f0f0f0; */
+}
+
+#slideB {
+    /* background-color: #e0e0e0; */
+}
+
+/* .sound-note {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.message-box {
+    background-color: #c5d5c5;
+    padding: 20px;
+    margin: 20px;
+    border: 2px dotted #000;
+}
+
+.instruction-text {
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.level-selector {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.level-bar {
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid #000;
+    margin: 20px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.level-progress {
+    height: 100%;
+    width: 33.33%;
+    background-color: #4a7a4a;
+    transition: width 0.3s ease;
+}
+
+.level-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.level-labels span {
+    font-size: 1.1rem;
+    color: #000;
+} */
+
+/* Arrow Button Styling */
+.arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 50;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: bounce 2s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+} 
