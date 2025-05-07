@@ -1,0 +1,94 @@
+body {
+  background: #fdf6ee;
+  font-family: 'Quicksand', Arial, sans-serif;
+  color: #188c6c;
+  margin: 0;
+  padding: 0;
+}
+.art-container {
+  border: 1px solid #188c6c;
+  margin: 20px auto;
+  max-width: 600px;
+  background: #fdf6ee;
+  padding: 16px;
+}
+.art-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.art-title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.art-prompt {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #188c6c;
+}
+.art-refresh {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #188c6c;
+  border: none;
+  background: none;
+}
+.art-canvas {
+  border: 1px solid #188c6c;
+  background: #fff;
+  display: block;
+  margin: 0 auto 16px auto;
+}
+.art-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.art-brush-colors {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.art-brush-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #188c6c;
+  cursor: pointer;
+  display: inline-block;
+}
+.art-brush-color.selected {
+  box-shadow: 0 0 0 3px #188c6c;
+}
+.art-brush-size {
+  margin-left: 16px;
+}
+.art-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+.art-action-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #188c6c;
+  font-family: inherit;
+  letter-spacing: 1px;
+  padding: 2px 0;
+}
+.art-action-btn.clear { color: #ff5e1e; }
+.art-action-btn.undo { color: #188c6c; }
+.art-action-btn.submit { color: #1e3a8a; }
+.art-brush-label {
+  font-size: 0.8rem;
+  color: #188c6c;
+  margin-left: 8px;
+} 

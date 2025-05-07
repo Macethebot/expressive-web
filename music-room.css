@@ -1,0 +1,87 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+}
+
+.player-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.back-button, .sound-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  margin-left: 10px;
+}
+.back-button {
+  right: 100px;
+}
+.back-button:hover, .sound-toggle:hover {
+  transform: scale(1.07);
+  background-color: #45a049;
+}
+.bottom-bar .about-button {
+  margin-left: 20px;
+  position: static;
+  width: 60px;
+  height: 60px;
+}
+.sound-toggle {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  margin-right: 10px;
+}
+.sound-toggle:hover {
+  transform: scale(1.07);
+  background-color: #45a049;
+} 

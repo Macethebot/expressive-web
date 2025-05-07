@@ -1,87 +1,63 @@
-console.log('Website loaded successfully!'); 
+// JavaScript file ready for future functionality 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const firstArrowBtn = document.getElementById('firstArrowBtn');
-    const secondArrowBtn = document.getElementById('secondArrowBtn');
-    const levelBar = document.querySelector('.level-bar');
-    const levelProgress = document.querySelector('.level-progress');
-    const activityCards = document.querySelectorAll('.activity-card');
-    
-    // First arrow click handler
-    firstArrowBtn.addEventListener('click', function() {
-        document.getElementById('slide2').scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+document.addEventListener('DOMContentLoaded', () => {
+    const exploreBtn = document.getElementById('exploreBtn');
+    const navigation = document.getElementById('navigation');
+    const container = document.querySelector('.container');
+    const backToLanding = document.getElementById('backToLanding');
+
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            // Slide up the main content
+            container.style.transform = 'translateY(-100vh)';
+            
+            // Show the navigation
+            navigation.classList.remove('hidden');
+            setTimeout(() => {
+                navigation.classList.add('visible');
+            }, 100);
         });
-    });
+    }
 
-    // Second arrow click handler
-    secondArrowBtn.addEventListener('click', function() {
-        document.getElementById('slide3').scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+    if (backToLanding) {
+        backToLanding.addEventListener('click', () => {
+            navigation.classList.remove('visible');
+            setTimeout(() => {
+                navigation.classList.add('hidden');
+                container.style.transform = 'translateY(0)';
+            }, 500);
         });
-    });
-
-    // Level bar click handler
-    levelBar.addEventListener('click', function(e) {
-        const rect = levelBar.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const percentage = (x / rect.width) * 100;
-        let level;
-        
-        if (percentage <= 33.33) {
-            levelProgress.style.width = '33.33%';
-            level = 'Low';
-        } else if (percentage <= 66.66) {
-            levelProgress.style.width = '66.66%';
-            level = 'Medium';
-        } else {
-            levelProgress.style.width = '100%';
-            level = 'High';
-        }
-
-        document.getElementById('levelTitle').textContent = level + ' Level Recipes';
-        secondArrowBtn.classList.remove('hidden');
-    });
-
-    // Activity cards click handler
-    activityCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const activityName = this.querySelector('p').textContent;
-            showActivityDetail(activityName);
-        });
-    });
+    }
 });
 
-// function showActivityDetail(activityName) {
-//     const activities = {
-//         'Drawing': {
-//             ingredients: ['Paper', 'Pencils or crayons', 'Comfortable space'],
-//             description: 'Find a quiet spot and let your creativity flow. There\'s no pressure to create anything specific - just enjoy the process of making marks on paper.'
-//         },
-//         'Listen to Music': {
-//             ingredients: ['Headphones', 'Your favorite playlist', 'Comfortable spot'],
-//             description: 'Put on your favorite songs and let yourself get lost in the music. Try closing your eyes and focusing only on the sounds.'
-//         },
-//         'Play Games': {
-//             ingredients: ['Gaming device', 'Favorite game', 'Time set aside'],
-//             description: 'Choose a game that brings you joy and set aside some time to fully immerse yourself in it. Remember, this is your time to enjoy yourself.'
-//         }
-//     };
+// --- Universal Music and Back Button ---
+function addMusicAndBackButtons() {
+    // Create sound toggle button
+    const soundBtn = document.createElement('button');
+    soundBtn.className = 'universal-sound-toggle';
+    soundBtn.title = 'Sound On/Off';
+    soundBtn.innerHTML = '🔊';
+    soundBtn.style.position = 'fixed';
+    soundBtn.style.left = '30px';
+    soundBtn.style.bottom = '40px';
 
-//     const activity = activities[activityName];
-//     document.getElementById('activityName').textContent = activityName;
-    
-//     const ingredientsList = document.getElementById('ingredientsList');
-//     ingredientsList.innerHTML = activity.ingredients
-//         .map(ingredient => `<li>${ingredient}</li>`)
-//         .join('');
-    
-//     document.getElementById('descriptionText').textContent = activity.description;
-    
-//     document.getElementById('slide4').scrollIntoView({ 
-//         behavior: 'smooth',
-//         block: 'start'
-//     });
-// } 
+    soundBtn.onclick = function() {
+        const audios = document.querySelectorAll('audio');
+        let anyMuted = Array.from(audios).some(a => a.muted);
+        audios.forEach(a => a.muted = !anyMuted);
+        soundBtn.innerHTML = anyMuted ? '🔊' : '🔇';
+    };
+
+    // Create back to home button
+    const backBtn = document.createElement('a');
+    backBtn.className = 'universal-back-button';
+    backBtn.href = 'index.html';
+    backBtn.title = 'Back to Home';
+    backBtn.innerHTML = '<img src="images/home-icon.png" alt="Back to Home">';
+    backBtn.style.position = 'fixed';
+    backBtn.style.right = '30px';
+    backBtn.style.bottom = '40px';
+
+    document.body.appendChild(soundBtn);
+    document.body.appendChild(backBtn);
+} 

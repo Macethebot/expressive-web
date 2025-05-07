@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw your favorite fruit</title>
+    <link rel="stylesheet" href="art.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="art-container">
+        <div class="art-header">
+            <span class="art-title">Draw</span>
+            <span class="art-prompt">your favorite fruit</span>
+            <button class="art-refresh" title="Refresh">&#8635;</button>
+        </div>
+        <canvas id="draw-canvas" class="art-canvas" width="500" height="400"></canvas>
+        <div class="art-controls">
+            <div>
+                <div class="art-brush-colors">
+                    <span class="art-brush-color" style="background:#ff5e1e" data-color="#ff5e1e"></span>
+                    <span class="art-brush-color selected" style="background:#188c6c" data-color="#188c6c"></span>
+                    <span class="art-brush-color" style="background:#1e3a8a" data-color="#1e3a8a"></span>
+                </div>
+                <input type="range" min="2" max="30" value="8" class="art-brush-size" id="brushSize">
+                <span class="art-brush-label">BRUSH SIZE</span>
+            </div>
+            <div class="art-actions">
+                <button class="art-action-btn clear" id="clearBtn">CLEAR</button>
+                <button class="art-action-btn undo" id="undoBtn">UNDO</button>
+                <button class="art-action-btn submit" id="submitBtn">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+    <script src="art.js"></script>
+</body>
+</html> 

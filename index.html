@@ -3,99 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Using this pack for Fav https://www.flaticon.com/packs/nature-196 -->
-    <link rel="icon" type="image/x-icon" href="img\mushroom.png" />
-    <title>Recipes for Happiness</title>
+    <title>The Morning Brew</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
-<!-- Adding header menu  -->
-<header>
-
-</header>
-
 <body>
-<!-- First Page - Title Box, Note and Button -->
-    <section class="slidePage" id="slideA">
-        <div class="boxedContent">
-            <div class = "title-box">
-                <h1>Recipes For <br> Happiness</h1>
-            </div>
-            <p class="title-note">This experience uses sound, turn on volume for best experience.</p> 
-            <button id="arrowBtn" class="arrow">
-                <img src="img\arrow_button.png" alt="Scroll down" class="arrow-icon">
+    <div class="container">
+        <h1>The Morning Brew</h1>
+        <p class="sound-message">This experience uses sound, turn on volume for best experience</p>
+        <div class="button-container">
+            <button class="image-button" id="exploreBtn">
+                <img src="img/Arrow Button.svg" alt="Click Me" style="height:40px; width:auto;" />
             </button>
         </div>
-    </section>
-<!-- Second Page View - Text Box, Description, Health Bar and Button -->
-    <section class="slidePage" id="slideB">
-        <div class="boxedContent">
-            <div class="slideB-TBox">
-                <h3>Thanks for stopping by, I'm glad you're trying to be kind to yourself.</h3>
-            </div>
-            <p class="descripText">Briefly explain what the website's goal is and then prompt to select a set up level.</p>
-            <div class="healthSel">
-                <div class="healthBar">
-                    <div class="level-progress"></div>
-                </div>
-                <div class="HealthLabels">
-                    <span>Low Level</span>
-                    <span>Medium Level</span>
-                    <span>High Level</span>
-                </div>
-            </div>
-            <button id="arrowBtn" class="arrow">
-                <img src="img\arrow_button.png" alt="Scroll down" class="arrow-icon">
-            </button>
-        </div>    
-    </section>
-    
-   <script src="script.js"></script>
-</body>
-</html>
-<body>
+    </div>
 
-<!-- 
-    <section class="slide" id="slide3">
-        <div class="content">
-            <h2 id="levelTitle">Low Level Recipes</h2>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <img src="crayon.png" alt="Drawing" class="activity-icon">
-                    <p>Drawing</p>
-                </div>
-                <div class="activity-card">
-                    <img src="vinyl.png" alt="Music" class="activity-icon">
-                    <p>Listen to Music</p>
-                </div>
-                <div class="activity-card">
-                    <img src="controller.png" alt="Gaming" class="activity-icon">
-                    <p>Play Games</p>
-                </div>
+    <section id="navigation" class="hidden">
+        <div class="room-select-container">
+            <h2 class="room-select-heading">Select a room to move to</h2>
+            <div class="room-buttons-row">
+                <a href="music.html" class="room-button">
+                    <div class="room-img-circle"><img src="img/Music.svg" alt="Music Room"></div>
+                    <span class="room-label">Music Room</span>
+                </a>
+                <a href="art.html" class="room-button">
+                    <div class="room-img-circle"><img src="img/Art.svg" alt="Art Center"></div>
+                    <span class="room-label">Art Center</span>
+                </a>
+                <a href="choices.html" class="room-button">
+                    <div class="room-img-circle"><img src="img/Choice.svg" alt="Choice Fatigue"></div>
+                    <span class="room-label">Choice Fatigue</span>
+                </a>
+                <a href="weeb.html" class="room-button">
+                    <div class="room-img-circle"><img src="img/Weeb.svg" alt="Weeb Corner"></div>
+                    <span class="room-label">Weeb Corner</span>
+                </a>
             </div>
         </div>
+        <button id="backToLanding" class="home-button" title="Back to Home">
+            <img src="img/Home.svg" alt="Home" />
+        </button>
     </section>
 
-    <section class="slide" id="slide4" class="hidden">
-        <div class="content">
-            <div class="activity-detail">
-                <h2 id="activityName">Activity Name</h2>
-                <div class="activity-content">
-                    <div class="ingredients">
-                        <h3>Ingredients</h3>
-                        <ul id="ingredientsList">
-                        </ul>
-                    </div>
-                    <div class="description">
-                        <h3>Description or Steps</h3>
-                        <div id="descriptionText">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- -->
+    <a href="about.html" class="about-button">About</a>
     <script src="script.js"></script>
 </body>
 </html> 
