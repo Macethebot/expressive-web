@@ -1,5 +1,3 @@
-// JavaScript file ready for future functionality 
-
 document.addEventListener('DOMContentLoaded', () => {
     const exploreBtn = document.getElementById('exploreBtn');
     const navigation = document.getElementById('navigation');

@@ -9,7 +9,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 3;
+    line-height: 1.2;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     color: #333;
     margin-bottom: 20px;
-    font-size: 4.5rem;
+    font-size: 8rem;
 }
 
 .sound-message {
