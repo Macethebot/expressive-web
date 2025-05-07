@@ -19,7 +19,7 @@ body {
     background: #e7e2b2;
 }
 
-.container {
+.landing {
     text-align: center;
     padding: 20px;
     transition: transform 0.5s ease;
@@ -27,18 +27,19 @@ body {
 
 h1 {
     font-family: 'Quicksand', sans-serif;
-    color: #333;
+    color: black;
     margin-bottom: 20px;
     font-size: 8rem;
 }
 
-.sound-message {
-    color: #666;
+.soundMes {
+    color: #1c1818;
+    font-weight: bold;
     margin-bottom: 40px;
     font-style: italic;
 }
 
-.button-container {
+.slideBtnCon {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -86,7 +87,7 @@ h1 {
     background-color: #45a049;
 }
 
-#navigation {
+#roomNav {
     position: fixed;
     top: 0;
     left: 0;
@@ -104,7 +105,7 @@ h1 {
     padding: 0;
 }
 
-#navigation.visible {
+#roomNav.visible {
     transform: translateY(0);
 }
 
@@ -145,7 +146,7 @@ h1 {
     display: none;
 }
 
-.room-select-container {
+.roomSelCon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,7 +155,7 @@ h1 {
     height: 100%;
 }
 
-.room-select-heading {
+.roomSelText {
     font-family: 'Quicksand', sans-serif;
     font-size: 2.8rem;
     font-weight: bold;
@@ -249,6 +250,8 @@ h1 {
 }
 .slideButton img {
     display: block;
+    height:150px;
+    width:150px;
 }
 
 .universal-sound-toggle, .universal-back-button {
