@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-
+/* General Page Styling -------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -16,13 +16,7 @@ body {
     justify-content: center;
     position: relative;
     overflow-x: hidden;
-    background: #e7e2b2;
-}
-
-.landing {
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.5s ease;
+    background: #a9d4a5;
 }
 
 h1 {
@@ -30,6 +24,69 @@ h1 {
     color: black;
     margin-bottom: 20px;
     font-size: 8rem;
+}
+
+p{
+    color: black;
+    font-size: 1.4rem; 
+}
+
+.homeBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.homeBtn img {
+    display: block;
+    height:100px;
+    width:100px;
+}
+
+.homeBtn:hover {
+    transform: scale(1.1);
+}
+
+.universal-sound-toggle, .universal-back-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 1000;
+    font-size: 2rem;
+    padding: 0;
+}
+.universal-sound-toggle:hover, .universal-back-button:hover {
+    background-color: #45a049;
+    transform: scale(1.07);
+}
+.universal-back-button img {
+    width: 32px;
+    height: 32px;
+    display: block;
+} 
+/* Landing Section/Home ------------------------------------------ */
+.landing {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.5s ease;
 }
 
 .soundMes {
@@ -46,22 +103,22 @@ h1 {
     align-items: center;
 }
 
-.hover-button {
-    padding: 15px 30px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
+.slideButton {
+    background: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    text-decoration: none;
+    border-radius: 0;
     display: inline-block;
 }
 
-.hover-button:hover {
-    transform: scale(1.05);
-    background-color: #45a049;
+.slideButton img {
+    display: block;
+    height:150px;
+    width:150px;
+}
+
+.slideButton:hover {
+    transform: scale(1.1);
 }
 
 .about-button {
@@ -87,6 +144,10 @@ h1 {
     background-color: #55444b;
 }
 
+
+
+
+/* Room Selection Styling --------------------------------------------------------  */
 #roomNav {
     position: fixed;
     top: 0;
@@ -164,13 +225,13 @@ h1 {
     text-align: center;
 }
 
-.room-buttons-row {
+.roomSelBtns {
     display: flex;
     justify-content: center;
     gap: 48px;
 }
 
-.room-button {
+.roomBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,7 +259,7 @@ h1 {
     object-fit: contain;
 }
 
-.room-button:hover .room-img-circle {
+.roomBtn:hover .room-img-circle {
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     transform: scale(1.07);
 }
@@ -210,73 +271,16 @@ h1 {
     text-align: center;
 }
 
-.home-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* box-shadow: 0 4px 16px rgba(0,0,0,0.12); */
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    z-index: 20;
-    padding: 0;
-}
-
-.home-button img {
-    width: 32px;
-    height: 32px;
-}
-
-.home-button:hover {
-    transform: scale(1.07);
-    background-color: #45a049;
-}
-
-.slideButton {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    box-shadow: none;
-    border-radius: 0;
-    display: inline-block;
-}
-.slideButton img {
-    display: block;
-    height:150px;
-    width:150px;
-}
-
-.universal-sound-toggle, .universal-back-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+/* Button Hover Styling ------------------------------------------- */
+.hover-button {
+    padding: 15px 30px;
+    font-size: 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    z-index: 1000;
-    font-size: 2rem;
-    padding: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
-.universal-sound-toggle:hover, .universal-back-button:hover {
-    background-color: #45a049;
-    transform: scale(1.07);
-}
-.universal-back-button img {
-    width: 32px;
-    height: 32px;
-    display: block;
-} 

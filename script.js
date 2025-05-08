@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const landing = document.querySelector('.landing');
     const backToLanding = document.getElementById('backToLanding');
 
+    // Arrow Button on landing 
     if (slideBtn) {
         slideBtn.addEventListener('click', () => {
             // Slide up the main content
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //Home button, back to landing 
     if (backToLanding) {
         backToLanding.addEventListener('click', () => {
             roomNav.classList.remove('visible');
