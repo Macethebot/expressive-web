@@ -1,27 +1,47 @@
+// Using Codetrain and personal p5 sketch for ref
+// https://editor.p5js.org/codingtrain/sketches/NiR0PAcbx
+// https://editor.p5js.org/Macethebot/sketches/nzPGn8yyA
+
+
+let i; 
+let xPos = 150;
+let yPos = 150;
+let xspeed = 2.5;
+let yspeed = -1;
+
+var canvas;
+
+function preload() {
+  i = loadImage('img/Arrow Button.svg');
+}
+
+function windowResized(){
+  rezizeCanvas(windowWidth, windowHeight);
+}
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  noStroke();
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.style('z-index','-1' );
   frameCount = 0;
+ 
 }
 
-function draw() {
-  background('#7b2ff2'); // base sky color
-  let a = color('#7b2ff2');
-  let b = color('#1e90ff');
-  let yStep = 32;
-  let xStep = 32;
-  let t = millis() * 0.0007; // faster, more visible movement
-  for (let y = 0; y < height; y += yStep) {
-    for (let x = 0; x < width; x += xStep) {
-      let n = noise(x * 0.04, y * 0.04, t);
-      let c = lerpColor(a, b, n);
-      c.setAlpha(60);
-      fill(c);
-      ellipse(x + n * 60, y + n * 60, 160 + n * 80, 60 + n * 40);
-    }
+function draw(){
+ background('blue');
+ image(i, xPos, yPos, 100, 100);
+  
+  // Move x and y
+  xPos = xPos + xspeed;
+  yPos = yPos + yspeed;
+  
+  // If image hits right or left edge
+  if (xPos < 0 || xPos > width - 100) {
+    // Turn around!
+    xspeed = -xspeed;    
   }
-}
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  if (yPos < 0 || yPos > height - 100) {
+    // Turn around!
+    yspeed = -yspeed;    
+  }
 }
