@@ -1,9 +1,33 @@
-body, html {
-  height: 100%;
-  width: 100%;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  background: #a9d4a5;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+  margin-bottom: 20px;
+  font-size: 8rem;
+}
+
+p{
+  color: black;
+  font-size: 1.4rem; 
+}
+
 .container {
   height: 100vh;
   display: flex;
@@ -11,6 +35,7 @@ body, html {
   margin: 0;
   padding: 0;
 }
+
 canvas {
   position: fixed; 
   top: 0; 
@@ -19,16 +44,7 @@ canvas {
   height: 100vh;
 }
 
-.player-controls {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.back-button, .sound-toggle {
+.home {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -48,26 +64,30 @@ canvas {
   z-index: 20;
   margin-left: 10px;
 }
-.back-button {
+
+.home {
   right: 100px;
 }
-.back-button:hover, .sound-toggle:hover {
+
+.home:hover {
   transform: scale(1.07);
   background-color: #45a049;
 }
-.bottom-bar .about-button {
-  margin-left: 20px;
-  position: static;
-  width: 60px;
-  height: 60px;
-}
-.sound-toggle {
+
+.music-controls {
   position: fixed;
   bottom: 30px;
   left: 30px;
-  width: 60px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  z-index: 20;
+}
+
+.control-button {
+  width: 80px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 30px;
   background-color: #4CAF50;
   color: white;
   display: flex;
@@ -75,13 +95,23 @@ canvas {
   justify-content: center;
   text-decoration: none;
   transition: transform 0.3s, background-color 0.3s;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
   cursor: pointer;
-  z-index: 20;
-  margin-right: 10px;
+  text-transform: uppercase;
 }
-.sound-toggle:hover {
+
+.control-button:hover {
   transform: scale(1.07);
   background-color: #45a049;
+}
+
+#now-playing {
+  color: white;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-left: 10px;
 } 

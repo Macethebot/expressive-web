@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Room - The Morning Brew</title>
-    <link rel="stylesheet" href="music-room.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="musicRoom.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
 </head>
 
-<body style="padding-top:0;margin-top:0;">
+<body>
     <div class="container">
-        <p> Adding to test layer order</p>
-            <!-- Audio element for mp3s, controls removed -->
-            <audio id="audio-player">
-              <source src="music/song1.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
+        <div class="music-controls">
+            <button id="play-pause" class="control-button" title="Play/Pause">Play</button>
+            <button id="next-song" class="control-button" title="Next Song">Next</button>
+            <div id="now-playing">No song playing</div>
         </div>
-        <a href="index.html" class="back-button" title="Back to Home">Back to Home</a>
-        <button id="sound-toggle" class="sound-toggle" title="Sound On/Off">🔊</button>
+        <a href="index.html" class="home" title="Home"> Home</a>
     </div>
     <script src="musicRoom.js"></script>
 </body>

@@ -1,4 +1,4 @@
-// Simple drawing logic for art.html
+// This page was generated using Cursor. Simple drawing logic for art.html
 const canvas = document.getElementById('draw-canvas');
 const ctx = canvas.getContext('2d');
 let drawing = false, brushColor = '#188c6c', brushSize = 8;
@@ -65,25 +65,25 @@ Array.from(document.querySelectorAll('.art-brush-color')).forEach(el => {
   });
 });
 // Brush size
-const brushSizeInput = document.getElementById('brushSize');
+const brushSizeInput = document.getElementById('brush-size');
 brushSizeInput.addEventListener('input', e => {
   brushSize = +e.target.value;
 });
 // Clear
-const clearBtn = document.getElementById('clearBtn');
+const clearBtn = document.getElementById('clear-btn');
 clearBtn.addEventListener('click', () => {
   paths = [];
   currentPath = [];
   redraw();
 });
 // Undo
-const undoBtn = document.getElementById('undoBtn');
+const undoBtn = document.getElementById('undo-btn');
 undoBtn.addEventListener('click', () => {
   paths.pop();
   redraw();
 });
 // Submit (placeholder)
-document.getElementById('submitBtn').addEventListener('click', () => {
+document.getElementById('submit-btn').addEventListener('click', () => {
   alert('Submitted!');
 });
 // Refresh

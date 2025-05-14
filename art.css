@@ -92,3 +92,30 @@ body {
   color: #188c6c;
   margin-left: 8px;
 } 
+
+/* Home button styling */
+.home {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  margin-left: 10px;
+}
+
+.home:hover {
+  transform: scale(1.07);
+  background-color: #45a049;
+}
