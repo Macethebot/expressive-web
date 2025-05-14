@@ -51,7 +51,7 @@ canvas {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #4CAF50;
+  background-color: #9e99cb;
   color: white;
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@ canvas {
 
 .home:hover {
   transform: scale(1.07);
-  background-color: #45a049;
+  background-color: #9e99cb;
 }
 
 .music-controls {
@@ -88,7 +88,7 @@ canvas {
   width: 80px;
   height: 60px;
   border-radius: 30px;
-  background-color: #4CAF50;
+  background-color: #9e99cb;
   color: white;
   display: flex;
   align-items: center;
