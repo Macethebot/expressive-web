@@ -9,14 +9,23 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.2;
+    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow-x: hidden;
-    background: #a9d4a5;
+    --gradient-x: 50%;
+    --gradient-y: 50%;
+    background: radial-gradient(
+        circle at var(--gradient-x) var(--gradient-y),
+        rgba(255, 249, 204, 0.95) 0%,
+        rgba(255, 236, 179, 0.95) 25%,
+        rgba(255, 218, 185, 0.95) 50%,
+        rgba(231, 226, 178, 0.95) 75%,
+        rgba(255, 228, 196, 0.95) 100%
+    );
 }
 
 h1 {
@@ -48,40 +57,15 @@ p{
 
 .homeBtn img {
     display: block;
-    height:100px;
-    width:100px;
+    height:75px;
+    width:75px;
 }
 
 .homeBtn:hover {
     transform: scale(1.1);
 }
 
-.universal-sound-toggle, .universal-back-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    z-index: 1000;
-    font-size: 2rem;
-    padding: 0;
-}
-.universal-sound-toggle:hover, .universal-back-button:hover {
-    background-color: #45a049;
-    transform: scale(1.07);
-}
-.universal-back-button img {
-    width: 32px;
-    height: 32px;
-    display: block;
-} 
+
 /* Landing Section/Home ------------------------------------------ */
 .landing {
     text-align: center;
@@ -113,8 +97,8 @@ p{
 
 .slideButton img {
     display: block;
-    height:150px;
-    width:150px;
+    height:100px;
+    width:100px;
 }
 
 .slideButton:hover {

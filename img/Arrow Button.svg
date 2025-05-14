@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 157">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
   <defs>
     <style>
       .cls-1 {
@@ -11,10 +11,8 @@
       }
     </style>
   </defs>
-  <circle class="cls-2" cx="80" cy="78" r="50"/>
-  <g>
-    <rect class="cls-1" x="79.29" y="41" width="3.3" height="72.5" rx="1" ry="1"/>
-    <rect class="cls-1" x="68.9" y="87.14" width="3.3" height="29.71" rx="1" ry="1" transform="translate(-51.45 79.76) rotate(-45)"/>
-    <rect class="cls-1" x="90.03" y="86.98" width="3.3" height="29.71" rx="1" ry="1" transform="translate(84.5 238.67) rotate(-135)"/>
-  </g>
+  <circle class="cls-2" cx="80" cy="80" r="80"/>
+  <rect class="cls-1" x="68.8" y="12" width="22.2" height="120.5" rx="11.1" ry="11.1"/>
+  <rect class="cls-1" x="90.4" y="83.9" width="15.7" height="63.8" rx="7.8" ry="7.8" transform="translate(126.1 -33.5) rotate(50.9)"/>
+  <rect class="cls-1" x="52.8" y="84.2" width="15.7" height="63.8" rx="7.8" ry="7.8" transform="translate(189 142.3) rotate(129.1)"/>
 </svg>

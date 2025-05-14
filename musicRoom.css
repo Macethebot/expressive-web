@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -48,10 +50,10 @@ canvas {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
-  background-color: #9e99cb;
+  background-color: #55444b;
   color: white;
   display: flex;
   align-items: center;
@@ -71,7 +73,7 @@ canvas {
 
 .home:hover {
   transform: scale(1.07);
-  background-color: #9e99cb;
+  background-color: #45a049;
 }
 
 .music-controls {
@@ -88,7 +90,7 @@ canvas {
   width: 80px;
   height: 60px;
   border-radius: 30px;
-  background-color: #9e99cb;
+  background-color: #55444b;
   color: white;
   display: flex;
   align-items: center;
@@ -114,4 +116,10 @@ canvas {
   padding: 10px 20px;
   border-radius: 25px;
   margin-left: 10px;
+}
+
+.reset-bottom {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
 } 

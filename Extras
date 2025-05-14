@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weeb Corner - The Morning Brew</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weeb.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="about-button">Back</a>
+    </div>
+    <div id="canvas-container" class="canvas-container"></div>
+    <div id="parameters-container" class="parameters-container">
+        <div class="sketch-selector">
+            <label for="sketch-select">Select a sketch:</label>
+            <select id="sketch-select"></select>
+        </div>
+        <div class="parameter-group" id="row-parameters">
+            <!-- Parameters will be added here by JavaScript -->
+        </div>
+    </div>
+    <script src="weeb.js"></script>
+</body>
+</html> 
+
+
+.canvas-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.parameters-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(142, 153, 237, 0.8);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.parameter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.parameter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.parameter-item label {
+    font-weight: bold;
+    color: #333;
+}
+
+.sketch-selector {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sketch-selector select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Additional styles for better organization */
+.parameter-item input[type="color"] {
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.parameter-item input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Container adjustments */
+.container {
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .canvas-container,
+    .parameters-container {
+        width: 90%;
+    }
+    
+    .parameter-group {
+        gap: 10px;
+    }
+} 
+
+
+
+let colorBase;
+let colorDoubleRec;
+let colorCircle;
+let circleRad;
+let selectDrawings;
+let currentSketch = 'Row Place';
+let numCircle = 6;
+let numEllipse = 6;
+
+function setup() {
+  // Create canvas in the canvas container
+  const canvas = createCanvas(windowWidth * 0.7, windowHeight * 0.7);
+  canvas.parent('canvas-container');
+  background(200);
+  
+  // Setup sketch selector
+  selectDrawings = createSelect();
+  selectDrawings.parent('sketch-select');
+  selectDrawings.option('Row Place');
+  selectDrawings.option('Overlay Grid');
+  selectDrawings.changed(sketchChanged);
+  
+  // Setup parameters
+  setupParameters();
+  
+  // Initial sketch
+  drawCurrentSketch();
+}
+
+function setupParameters() {
+  const paramContainer = document.getElementById('row-parameters');
+  
+  // Base Rect Color
+  const baseColorGroup = createDiv();
+  baseColorGroup.class('parameter-item');
+  baseColorGroup.parent('row-parameters');
+  
+  const baseColorLabel = createElement('label', 'Base Rect Color');
+  baseColorLabel.parent(baseColorGroup);
+  
+  colorBase = createInput("#FFFFFF", "color");
+  colorBase.parent(baseColorGroup);
+  colorBase.size(50);
+  
+  // Double Rect Color
+  const doubleColorGroup = createDiv();
+  doubleColorGroup.class('parameter-item');
+  doubleColorGroup.parent('row-parameters');
+  
+  const doubleColorLabel = createElement('label', 'Double Rect Color');
+  doubleColorLabel.parent(doubleColorGroup);
+  
+  colorDoubleRec = createInput("black", "color");
+  colorDoubleRec.parent(doubleColorGroup);
+  colorDoubleRec.size(50);
+  
+  // Circle Color
+  const circleColorGroup = createDiv();
+  circleColorGroup.class('parameter-item');
+  circleColorGroup.parent('row-parameters');
+  
+  const circleColorLabel = createElement('label', 'Circle Color');
+  circleColorLabel.parent(circleColorGroup);
+  
+  colorCircle = createInput("#099879", "color");
+  colorCircle.parent(circleColorGroup);
+  colorCircle.size(50);
+  
+  // Circle Radius Slider
+  const radiusGroup = createDiv();
+  radiusGroup.class('parameter-item');
+  radiusGroup.parent('row-parameters');
+  
+  const radiusLabel = createElement('label', 'Circle Radius');
+  radiusLabel.parent(radiusGroup);
+  
+  circleRad = createSlider(10, 50);
+  circleRad.parent(radiusGroup);
+  circleRad.size(80);
+}
+
+function draw() {
+  // Only redraw if it's the Row Place sketch
+  if (currentSketch === 'Row Place') {
+    background(200);
+    drawCurrentSketch();
+  }
+}
+
+function sketchChanged() {
+  currentSketch = selectDrawings.value();
+  background(200);
+  drawCurrentSketch();
+}
+
+function drawCurrentSketch() {
+  if (currentSketch === 'Row Place') {
+    rowPlacementsSketch();
+  } else if (currentSketch === 'Overlay Grid') {
+    buildCirlceSketch();
+  }
+}
+
+function rowPlacementsSketch() {
+  baseRect();
+  doubleRects();
+  innerCircle();
+}
+
+function buildCirlceSketch() {
+  buildCircle();
+  buildCircle();
+  buildCircle2();
+}
+
+function buildCircle() {
+  noStroke();
+  let circleSize = width/numCircle;
+  let padFactor = 0.1;
+  
+  for (let y = 0.5; y < numCircle; y++) {
+    for(let x = 0.5; x < numCircle; x++) {
+      fill(genRandomColor());
+      let circleSChange = circleSize * random(0.5, 0.9);
+      circle(x*circleSize, y*circleSize, circleSChange*(1-padFactor));
+    }
+  }
+}
+
+function buildCircle2() {
+  noStroke();
+  let circleSize = width/numCircle;
+  let padFactor = 0.1;
+  
+  for (let y = 0.5; y < numCircle; y++) {
+    for(let x = 0.5; x < numCircle; x++) {
+      fill(genRandomColor());
+      let circleSChange = circleSize * random(0.5, 0.9);
+      let offset = random(0, 10);
+      circle(x*circleSize + offset, y*circleSize + offset, circleSChange*(1-padFactor));
+    }
+  }
+}
+
+function genRandomColor() {
+  return color(random(0, 50), random(0, 130), random(0, 255), random(0, 90));
+}
+
+function baseRect() {
+  noStroke();
+  for (let x = 0; x < width; x += 100) {
+    for (let y = 0; y < height/1.5; y += 100) {
+      fill(colorBase.value());
+      rect(x+10, y+20, 75, 50, 8);
+    }
+  }
+}
+
+function doubleRects() {
+  noStroke();
+  for (let x = 0; x < width; x += 100) {
+    for (let y = 0; y < height/1.5; y += 100) { 
+      fill(colorDoubleRec.value());
+      rect(x+15, y+10, 65, 25, 10);
+    }
+  }
+  
+  for (let x = 0; x < width; x += 100) {
+    for (let y = 0; y < height/1.5; y += 100) { 
+      fill(colorDoubleRec.value()); 
+      rect(x+15, y+55, 65, 25, 10);
+    }
+  }
+}
+
+function innerCircle() {
+  noStroke();
+  for (let x = 0; x < width; x += 100) {
+    for (let y = 0; y < height/1.5; y += 100) { 
+      fill(colorCircle.value()); 
+      circle(x+48, y+45, circleRad.value()); 
+    }
+  }
+}
+
+// Handle window resizing
+function windowResized() {
+  resizeCanvas(windowWidth * 0.7, windowHeight * 0.7);
+  background(200);
+  drawCurrentSketch();
+} 

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const slideBtn = document.getElementById('slideBtn');
     const roomNav = document.getElementById('roomNav');
@@ -30,34 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// // --- Universal Music and Back Button ---
-// function addMusicAndBackButtons() {
-//     // Create sound toggle button
-//     const soundBtn = document.createElement('button');
-//     soundBtn.className = 'universal-sound-toggle';
-//     soundBtn.title = 'Sound On/Off';
-//     soundBtn.innerHTML = '🔊';
-//     soundBtn.style.position = 'fixed';
-//     soundBtn.style.left = '30px';
-//     soundBtn.style.bottom = '40px';
+// Add mouse movement tracking for gradient effect
+document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth) * 200;
+    const y = (e.clientY / window.innerHeight) * 100;
+    
+    document.body.style.setProperty('--gradient-x', `${x}%`);
+    document.body.style.setProperty('--gradient-y', `${y}%`);
+});
 
-//     soundBtn.onclick = function() {
-//         const audios = document.querySelectorAll('audio');
-//         let anyMuted = Array.from(audios).some(a => a.muted);
-//         audios.forEach(a => a.muted = !anyMuted);
-//         soundBtn.innerHTML = anyMuted ? '🔊' : '🔇';
-//     };
+// Add touch movement tracking for mobile devices
+document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    const x = (touch.clientX / window.innerWidth) * 100;
+    const y = (touch.clientY / window.innerHeight) * 100;
+    
+    document.body.style.setProperty('--gradient-x', `${x}%`);
+    document.body.style.setProperty('--gradient-y', `${y}%`);
+}, { passive: true }); 
 
-//     // Create back to home button
-//     const backBtn = document.createElement('a');
-//     backBtn.className = 'universal-back-button';
-//     backBtn.href = 'index.html';
-//     backBtn.title = 'Back to Home';
-//     backBtn.innerHTML = '<img src="images/home-icon.png" alt="Back to Home">';
-//     backBtn.style.position = 'fixed';
-//     backBtn.style.right = '30px';
-//     backBtn.style.bottom = '40px';
 
-//     document.body.appendChild(soundBtn);
-//     document.body.appendChild(backBtn);
-// } 
+
