@@ -26,13 +26,14 @@ let songs = [
 ];
 let songNames = [
   'TerbujurKaku - Jablay',
-  'Song 2',
-  'Song 3'
+  'Ove-Naxx - Warte',
+  'No Loli-Gagging - Its Time for an Adventure',
+  'Duran Duran Duran - Lazer Furniture Designer',
+  'Desper - Basics Sessions - TorG'
 ];
 let song;
 
 function preload() {
-  // i = loadImage('img/Arrow Button.svg'); // No longer needed
   soundFormats('mp3');
   loadCurrentSong();
 }
@@ -139,9 +140,9 @@ function createBall(x, y, r, c) {
 }
 
 function getBallColor(n) {
-  if (n > 30) return color(80, 255, 120); // Green
+  if (n > 30) return color(15, 180, 120); // Green
   if (n > 10) return color(80, 120, 255); // Blue
-  return color(150, 80, 255); // Purple
+  return color(100, 80, 255); // Purple
 }
 
 function draw() {

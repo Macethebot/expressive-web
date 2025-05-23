@@ -20,23 +20,23 @@ body {
     --gradient-y: 50%;
     background: radial-gradient(
         circle at var(--gradient-x) var(--gradient-y),
-        rgba(255, 249, 204, 0.95) 0%,
-        rgba(255, 236, 179, 0.95) 25%,
-        rgba(255, 218, 185, 0.95) 50%,
-        rgba(231, 226, 178, 0.95) 75%,
-        rgba(255, 228, 196, 0.95) 100%
+        #1f9ba7f2 0%,
+        #1e83acf2 25%,
+        rgba(29, 111, 218, 0.95) 50%,
+        rgba(39, 51, 228, 0.95) 75%,
+        rgba(124, 39, 221, 0.95) 100%
     );
 }
 
 h1 {
     font-family: 'Quicksand', sans-serif;
-    color: black;
+    color: rgb(227, 233, 255);
     margin-bottom: 20px;
     font-size: 8rem;
 }
 
 p{
-    color: black;
+    color: rgb(227, 233, 255);
     font-size: 1.4rem; 
 }
 
@@ -73,8 +73,8 @@ p{
     transition: transform 0.5s ease;
 }
 
-.soundMes {
-    color: #1c1818;
+.welMes {
+    color: (227, 233, 255);
     font-weight: bold;
     margin-bottom: 40px;
     font-style: italic;
